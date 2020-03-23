@@ -1,0 +1,86 @@
+<html>
+<h1>Queen Path Finding</h1>
+<button onclick="chess()">click here to start</button>
+<script>
+function chess() {
+var pos = prompt("enter the position" , "enter here");
+ if(pos.charCodeAt(1)<=56&&pos.charCodeAt(1)>=49&&pos.charCodeAt(0)>=97&&pos.charCodeAt(1)<=105)
+ {
+  var Direction = prompt("enter the Direction","");
+  var steps = parseInt(prompt("enter no of steps",""));
+
+switch(Direction) {
+	case "N":
+    if(((pos.charCodeAt(1))+steps)<=56){
+    pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)+steps));
+	prompt("Final Position",pos);}
+      else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+	case "S":
+    if(((pos.charCodeAt(1))-steps)>=49){
+    pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)-steps));
+    prompt("Final Position",pos);}
+      else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "E":
+    if(((pos.charCodeAt(0)+steps))<=105){
+        pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)+steps));
+        prompt("Final Position",pos);
+		}
+	  else
+   prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "W":
+    if(((pos.charCodeAt(0))-steps)>=97){
+     pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)-steps));
+      prompt("Final Position",pos);}
+	  else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "NE":
+    if(((pos.charCodeAt(1))+steps)<=56&&(pos.charCodeAt(0)+steps)<=105){
+   pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)+steps));
+   pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)+steps));
+    prompt("Final Position",pos);
+	}
+      else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "NW":
+    if((((pos.charCodeAt(1))+steps)<=56&&(pos.charCodeAt(0)-steps)>=97)){
+   pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)+steps));
+        pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)-steps));
+   prompt("Final Position",pos);
+	}  else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "SE":
+    if(((pos.charCodeAt(1))-steps)>=49&&(pos.charCodeAt(0)+steps)<=105){
+           pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)-steps));
+             pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)+steps));
+		prompt("Final Position",pos);
+    }
+    else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+    case "SW":
+    if(((pos.charCodeAt(1))-steps)>=49&&(pos.charCodeAt(0)-steps)>=97){
+    pos=pos.replace(String.fromCharCode(pos.charCodeAt(1)),String.fromCharCode(pos.charCodeAt(1)-steps));
+    pos=pos.replace(String.fromCharCode(pos.charCodeAt(0)),String.fromCharCode(pos.charCodeAt(0)-steps));
+    prompt("Final Position",pos);}
+    else
+    prompt("Queen is out of Board","Click OK to exit");
+    break;
+  
+}
+document.write("\n");
+}
+else
+prompt("Queen is out of Board","Click OK to exit");
+document.write("Thank You");
+}
+</script>
+</body>
+</html>
